@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html, body, #root {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: #0f0f13;
+    color: #e2e2e8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #2d2d3a;
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #4f46e5;
+  }
+}
+
+@layer components {
+  /* --- Glass card used on auth page --- */
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl;
+  }
+
+  /* --- Sidebar glass item --- */
+  .sidebar-item {
+    @apply relative flex flex-col gap-0.5 px-3 py-2.5 rounded-xl cursor-pointer
+           transition-all duration-200 ease-out
+           hover:bg-white/[0.07];
+  }
+  .sidebar-item.active {
+    @apply bg-brand-500/20 border border-brand-500/30;
+  }
+
+  /* --- Bubble base --- */
+  .bubble-user {
+    @apply bg-brand-600 text-white rounded-2xl rounded-br-md px-4 py-3
+           max-w-[75%] ml-auto shadow-lg animate-slide-up;
+  }
+  .bubble-assistant {
+    @apply bg-white/[0.06] border border-white/10 text-[#d4d4e0] rounded-2xl rounded-bl-md px-4 py-3
+           max-w-[80%] shadow-md animate-slide-up;
+  }
+
+  /* --- Primary button --- */
+  .btn-primary {
+    @apply w-full py-2.5 px-4 rounded-xl font-semibold text-white text-sm
+           bg-gradient-to-r from-brand-600 to-brand-500
+           hover:from-brand-700 hover:to-brand-600
+           active:scale-[0.98] transition-all duration-150
+           disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-brand-900/40;
+  }
+
+  /* --- Input field --- */
+  .input-field {
+    @apply w-full px-4 py-2.5 rounded-xl bg-white/[0.06] border border-white/10
+           text-sm text-white placeholder-white/30
+           focus:outline-none focus:border-brand-500/60 focus:bg-white/[0.09]
+           transition-all duration-150;
+  }
+
+  /* --- Message input area --- */
+  .msg-input {
+    @apply w-full bg-white/[0.06] border border-white/10 rounded-2xl
+           text-sm text-white placeholder-white/30 resize-none
+           px-4 py-3 pr-14
+           focus:outline-none focus:border-brand-500/50 focus:bg-white/[0.09]
+           transition-all duration-150;
+  }
+}

@@ -1,0 +1,28 @@
+# Environment variables (contains sensitive API keys & database secrets)
+.env
+agent/.env
+Agent/.env
+
+# Python Virtual Environments
+conversational_AI/
+venv/
+.venv/
+env/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Node / Frontend build & dependencies
+Frontend/node_modules/
+Frontend/dist/
+node_modules/
+
+# Database files / local vector storage
+podcast_qdrant_db/
+
+# OS metadata
+.DS_Store
+Thumbs.db
